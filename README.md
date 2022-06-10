@@ -24,7 +24,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Ejercicio técnico FE
 
-Se requiere hacer un nested menu\* utilizando Angular (versión 9 o superior) utilizando el siguiente árbol de categorías detallado abajo (podría llegar a tener más niveles de profundidad en un futuro)
+Se requiere hacer un nested menu utilizando Angular (versión 9 o superior) utilizando el siguiente árbol de categorías detallado abajo (podría llegar a tener más niveles de profundidad en un futuro)
 
 ## Further help
 
