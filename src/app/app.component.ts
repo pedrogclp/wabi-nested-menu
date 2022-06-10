@@ -9,7 +9,7 @@ import { ICustomNestedMenu } from './custom-nested-menu/custom-nested-menu';
 export class AppComponent {
   title = 'wabi-nested-menu';
 
-  data: ICustomNestedMenu[] = [
+  dataSource: ICustomNestedMenu[] = [
     {
       name: "Bebidas",
       id: 1,

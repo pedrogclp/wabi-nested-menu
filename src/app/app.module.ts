@@ -8,7 +8,7 @@ import { CustomNestedMenuModule } from './custom-nested-menu/custom-nested-menu.
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

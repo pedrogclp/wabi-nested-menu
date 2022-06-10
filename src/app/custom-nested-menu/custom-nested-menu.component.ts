@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICustomNestedMenu } from './custom-nested-menu';
+import { CustomNestedMenuClass } from './custom-nested-menu';
 
 @Component({
   selector: 'app-custom-nested-menu',
@@ -8,15 +8,30 @@ import { ICustomNestedMenu } from './custom-nested-menu';
 })
 export class CustomNestedMenuComponent implements OnInit {
 
-  @Input() data: ICustomNestedMenu[] = [];
+  @Input() dataSource: CustomNestedMenuClass[] = [];
+  @Input() parent: CustomNestedMenuClass;
 
-  constructor() { }
+  menu: CustomNestedMenuClass[] = [];
+
+  constructor() {
+    this.parent = new CustomNestedMenuClass();
+  }
 
   ngOnInit(): void {
-    console.log(this.data);
+    /* Null for Root */
+    this.menu = this.getMenu(this.dataSource, this.parent.id);
+  }
 
-    console.log(this.data.filter(option => option.parentId === null));
-    ;
+  getMenu(dataSource: CustomNestedMenuClass[], parentId: number | null): CustomNestedMenuClass[] {
+
+    let menu = dataSource.filter(option => option.parentId === parentId);
+
+    /* Recursive options */
+    if (menu.length > 0) {
+      menu.forEach(option => option.childrens = this.getMenu(dataSource, option.id));
+    }
+
+    return menu;
   }
 
 }
